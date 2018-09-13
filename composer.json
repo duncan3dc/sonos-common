@@ -1,0 +1,41 @@
+{
+    "name": "duncan3dc/sonos-common",
+    "type": "library",
+    "description": "Some utilities and interfaces for Sonos code",
+    "keywords": ["sonos", "api"],
+    "homepage": "https://github.com/duncan3dc/sonos-common",
+    "license": "Apache-2.0",
+    "authors": [{
+        "name": "Craig Duncan",
+        "email": "git@duncanc.co.uk",
+        "homepage": "https://github.com/duncan3dc",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "maglnet/composer-require-checker": "^1.0",
+        "mockery/mockery": "^1.0",
+        "phpstan/phpstan": "^0.10.3",
+        "phpstan/phpstan-mockery": "^0.10.2",
+        "phpstan/phpstan-phpunit": "^0.10.0",
+        "squizlabs/php_codesniffer": "^3.3",
+        "phpunit/phpunit": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {"duncan3dc\\Sonos\\Common\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"duncan3dc\\Sonos\\CommonTests\\": "tests/"}
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit",
+            "vendor/bin/composer-require-checker",
+            "vendor/bin/phpstan analyse --level=max src",
+            "vendor/bin/phpstan analyse --level=max --configuration=phpstan-tests.neon tests",
+            "vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 src tests"
+        ]
+    }
+}

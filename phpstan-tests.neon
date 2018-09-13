@@ -1,0 +1,7 @@
+parameters:
+  ignoreErrors:
+    - '/Parameter #1 \$string of static method duncan3dc\\Sonos\\Common\\Utils\\Time::parse\(\) expects string, int given/'
+
+includes:
+	- vendor/phpstan/phpstan-mockery/extension.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
