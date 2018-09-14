@@ -5,6 +5,14 @@ Changelog
 
 --------
 
+## 0.2.0 - 2018-09-14
+
+### Added
+
+* [Exceptions] A common exception interface and a NotFoundException.
+
+--------
+
 ## 0.1.0 - 2018-09-13
 
 ### Added
