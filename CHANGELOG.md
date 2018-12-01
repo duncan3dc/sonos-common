@@ -5,6 +5,15 @@ Changelog
 
 --------
 
+## 0.3.0 - 2018-12-01
+
+### Added
+
+* [Interfaces] For Households, Groups, and Players.
+* [Support] Added support for PHP 7.3.
+
+--------
+
 ## 0.2.0 - 2018-09-14
 
 ### Added
