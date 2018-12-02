@@ -8,35 +8,24 @@ use PHPUnit\Framework\TestCase;
 class TimeTest extends TestCase
 {
 
-    public function testParse1()
+    public function parseProvider()
     {
-        $time = Time::parse(55);
-        $this->assertSame(55, $time->asInt());
-        $this->assertSame("00:00:55", $time->asString());
+        yield [55, "00:00:55"];
+        yield [":55", "00:00:55"];
+        yield ["1:55", "00:01:55"];
+        yield ["01:00", "00:01:00"];
+        yield ["1:01:01", "01:01:01"];
+        yield ["1:01:", "01:01:00"];
+        yield ["1::", "01:00:00"];
+        yield ["::", "00:00:00"];
     }
-    public function testParse2()
+    /**
+     * @dataProvider parseProvider
+     */
+    public function testParse($input, $expected)
     {
-        $time = Time::parse(":55");
-        $this->assertSame(55, $time->asInt());
-        $this->assertSame("00:00:55", $time->asString());
-    }
-    public function testParse3()
-    {
-        $time = Time::parse("1:55");
-        $this->assertSame(115, $time->asInt());
-        $this->assertSame("00:01:55", $time->asString());
-    }
-    public function testParse4()
-    {
-        $time = Time::parse("01:00");
-        $this->assertSame(60, $time->asInt());
-        $this->assertSame("00:01:00", $time->asString());
-    }
-    public function testParse5()
-    {
-        $time = Time::parse("1:01:01");
-        $this->assertSame(3661, $time->asInt());
-        $this->assertSame("01:01:01", $time->asString());
+        $time = Time::parse($input);
+        $this->assertSame($expected, $time->asString());
     }
 
 
@@ -69,6 +58,11 @@ class TimeTest extends TestCase
     {
         $time = Time::fromFormat("%s:%m", "30:22");
         $this->assertSame("00:22:30", $time->asString());
+    }
+    public function testFromFormat7()
+    {
+        $time = Time::fromFormat("%h:%s", "21:17");
+        $this->assertSame("21:00:17", $time->asString());
     }
 
 

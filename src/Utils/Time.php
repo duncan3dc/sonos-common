@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace duncan3dc\Sonos\Common\Utils;
 
@@ -41,15 +42,11 @@ final class Time implements TimeInterface
 
         $seconds = (int) array_pop($bits);
 
-        if (count($bits) > 0) {
-            $minutes = (int) array_pop($bits);
-            $seconds += ($minutes * 60);
+        $minutes = (int) array_pop($bits);
+        $seconds += ($minutes * 60);
 
-            if (count($bits) > 0) {
-                $hours = (int) array_pop($bits);
-                $seconds += ($hours * 60 * 60);
-            }
-        }
+        $hours = (int) array_pop($bits);
+        $seconds += ($hours * 60 * 60);
 
         return new self($seconds);
     }
@@ -68,15 +65,15 @@ final class Time implements TimeInterface
 
         $regex = str_replace(["%s", "%m", "%h"], ["({$digit})", $digit, $digit], $format);
         preg_match("/{$regex}/", $string, $matches);
-        $s = (int) ($matches[1] ?? 0);
+        $s = ($matches[1] ?? 0);
 
         $regex = str_replace(["%s", "%m", "%h"], [$digit, "({$digit})", $digit], $format);
         preg_match("/{$regex}/", $string, $matches);
-        $m = (int) ($matches[1] ?? 0);
+        $m = ($matches[1] ?? 0);
 
         $regex = str_replace(["%s", "%m", "%h"], [$digit, $digit, "({$digit})"], $format);
         preg_match("/{$regex}/", $string, $matches);
-        $h = (int) ($matches[1] ?? 0);
+        $h = ($matches[1] ?? 0);
 
         return new self(($h * 3600) + ($m * 60) + $s);
     }
@@ -155,7 +152,7 @@ final class Time implements TimeInterface
      */
     public function getMinutes(): int
     {
-        $minutes = (int) floor($this->seconds / 60);
+        $minutes = floor($this->seconds / 60);
         return $minutes % 60;
     }
 

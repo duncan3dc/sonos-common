@@ -23,6 +23,9 @@ script:
 
 jobs:
   include:
+    - stage: mutations
+      script:
+        - vendor/bin/infection
     - stage: coverage
       script:
         - vendor/bin/phpunit --coverage-clover=coverage.xml
