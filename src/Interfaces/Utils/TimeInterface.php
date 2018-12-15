@@ -33,7 +33,7 @@ interface TimeInterface
      *
      * @return int
      */
-    public function getSeconds(): int ;
+    public function getSeconds(): int;
 
     /**
      * Get the minutes portion of the time.
