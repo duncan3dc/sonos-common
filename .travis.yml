@@ -31,7 +31,7 @@ jobs:
 
     - stage: mutations
       script:
-        - vendor/bin/infection
+        - vendor/bin/infection --min-covered-msi=100
 
     - stage: coding standards
       script:
