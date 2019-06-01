@@ -36,7 +36,7 @@
             "vendor/bin/composer-require-checker",
             "vendor/bin/phpstan analyse --level=max src",
             "vendor/bin/phpstan analyse --level=max --configuration=phpstan-tests.neon tests",
-            "vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 src tests",
+            "vendor/bin/phpcs --standard=phpcs.xml",
             "vendor/bin/infection --min-covered-msi=100",
             "@composer validate --strict"
         ]

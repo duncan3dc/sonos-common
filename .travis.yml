@@ -35,7 +35,7 @@ jobs:
 
     - stage: coding standards
       script:
-        - vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 src tests
+        - vendor/bin/phpcs --standard=phpcs.xml
 
     - stage: code quality
       script:
