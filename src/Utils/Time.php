@@ -191,6 +191,6 @@ final class Time implements TimeInterface
             "%S"    =>  sprintf("%02s", $seconds),
         ];
 
-        return str_replace(array_keys($replace), array_values($replace), $format);
+        return str_replace(array_keys($replace), $replace, $format);
     }
 }
