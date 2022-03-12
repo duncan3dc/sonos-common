@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace duncan3dc\Sonos\Common\Utils;

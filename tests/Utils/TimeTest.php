@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class TimeTest extends TestCase
 {
-
     public function parseProvider()
     {
         yield [55, "00:00:55"];
