@@ -2,7 +2,7 @@
 Some utilities and interfaces for Sonos code in PHP
 
 [![release](https://poser.pugx.org/duncan3dc/sonos-common/version.svg)](https://packagist.org/packages/duncan3dc/sonos-common)
-[![build](https://travis-ci.org/duncan3dc/sonos-common.svg?branch=master)](https://travis-ci.org/duncan3dc/sonos-common)
+[![build](https://github.com/duncan3dc/sonos-common/workflows/.github/workflows/buildcheck.yml/badge.svg?branch=main)](https://github.com/duncan3dc/sonos-common/actions?query=branch%3Amain+workflow%3A.github%2Fworkflows%2Fbuildcheck.yml)
 [![coverage](https://codecov.io/gh/duncan3dc/sonos-common/graph/badge.svg)](https://codecov.io/gh/duncan3dc/sonos-common)
 
 
