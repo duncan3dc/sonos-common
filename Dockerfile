@@ -1,11 +1,7 @@
 ARG PHP_VERSION=7.3
 FROM php:${PHP_VERSION}-cli
 
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-ENV XDEBUG_MODE=coverage
-
-ARG COVERAGE
-RUN if [ "$COVERAGE" = "pcov" ]; then pecl install pcov && docker-php-ext-enable pcov; fi
+RUN pecl install pcov && docker-php-ext-enable pcov
 
 # Install composer to manage PHP dependencies
 RUN apt-get update && apt-get install -y git zip
