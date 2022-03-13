@@ -12,17 +12,17 @@
         "role": "Developer"
     }],
     "require": {
-        "php": "^7.3"
+        "php": "^7.3 || ^8.0"
     },
     "require-dev": {
-        "infection/infection": "^0.13.1",
-        "maglnet/composer-require-checker": "^2.0",
+        "infection/infection": "^0.18",
+        "maglnet/composer-require-checker": "^2.0 || ^3.0",
         "mockery/mockery": "^1.2",
         "nette/di": "^3.0",
         "phpstan/phpstan": "^0.12.99",
         "phpstan/phpstan-mockery": "^0.12.14",
         "phpstan/phpstan-phpunit": "^0.12.22",
-        "squizlabs/php_codesniffer": "^3.4",
+        "squizlabs/php_codesniffer": "^3.6.2",
         "phpunit/phpunit": "^9.5.18"
     },
     "autoload": {
